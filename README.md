@@ -61,7 +61,8 @@ Simulator views of the prototype, from planning to run guidance.
 
 ### Demo Video
 
-[Watch the demo](docs/videos/xbeat.mp4)
+https://github.com/user-attachments/assets/d31545ef-a923-4a5b-b2fe-b1cf5ad94c39
+(have sound)
 
 ## Tech Stack
 
