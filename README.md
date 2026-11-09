@@ -61,10 +61,7 @@ Simulator views of the prototype, from planning to run guidance.
 
 ### Demo Video
 
-[TODO: Add a 15–30 second demo with audio showing plan generation and metronome guidance.]
-
-<!-- Add your file at docs/videos/xbeat-demo.mp4, then uncomment the link below and remove the TODO above. -->
-<!-- [Watch the demo with audio](docs/videos/xbeat-demo.mp4) -->
+[Watch the demo](docs/videos/xbeat.mp4)
 
 ## Tech Stack
 
@@ -81,24 +78,46 @@ Simulator views of the prototype, from planning to run guidance.
 
 1. Clone: `git clone https://github.com/Poonmeemana/XBEAT.git`
 2. Create an iOS App project in Xcode using Swift and SwiftUI.
-3. Add the Swift files under `XBEAT/` to the app target.
+3. Add the Swift files from `App/`, `Views/`, `Components/`, `Models/`, and `Services/` to the app target.
 4. Remove the generated app entry point so `XBEATApp` is the only `@main` type.
-5. Add `high.wav`, `mid.wav`, and `low.wav` from `XBEAT/Resources/Audio/` to **Copy Bundle Resources** as individual files.
+5. Add `high.wav`, `mid.wav`, and `low.wav` from `Resources/Audio/` to **Copy Bundle Resources** as individual files.
 6. Supply image assets named `stepLeft` and `stepRight`; the required asset catalog is not yet included.
 7. Select an iOS simulator or configure signing for an iPhone, then build and run.
 
-See [development notes](docs/DEVELOPMENT.md) for setup details and manual verification scenarios.
+When importing into an existing Xcode project, update file references to the new paths and confirm target membership. Check plan generation, segment transitions, audio, and pause/resume on a simulator or device.
 
 ## Project Structure
 
-- `XBEAT/App/` — App entry point.
-- `XBEAT/Features/` — Onboarding, planning, and running screens.
-- `XBEAT/Models/` — Plan segments and plan types.
-- `XBEAT/Services/Planning/` — Cadence calculations and segment generation.
-- `XBEAT/Services/Audio/` — Metronome sounds and breathing patterns.
-- `XBEAT/Shared/` — Reusable UI components and extensions.
-- `XBEAT/Resources/` — Audio files and artwork.
-- `docs/` — Development notes, screenshots, and a folder for the demo video.
+```text
+XBEAT/
+├── README.md
+├── App/
+│   └── XBEATApp.swift            # App entry point
+├── Views/
+│   ├── Onboarding/
+│   │   ├── beginningView.swift   # Welcome screen
+│   │   └── loginView.swift       # Profile input screen
+│   ├── Planning/
+│   │   ├── ContentView.swift     # Plan editor
+│   │   └── PlanInputSheet.swift  # Automatic plan input
+│   └── Running/
+│       └── RunPlanView.swift     # Run timer and guidance
+├── Components/
+│   └── FloatingAddButton.swift  # Reusable add button
+├── Models/
+│   ├── PlanSegment.swift        # Segment data
+│   └── PlanType.swift           # Available plan types
+├── Services/
+│   ├── PlanLogic.swift          # Plan generation
+│   └── Metronome.swift          # Audio rhythm playback
+├── Resources/
+│   ├── Audio/                  # high.wav, mid.wav, low.wav
+│   └── Images/                 # run0.png, run4.png
+└── docs/
+    ├── images/                 # manual-plan.png, generate-plan.png,
+    │                           # review-plan.png, run-plan.png
+    └── videos/xbeat.mp4         # Demo video
+```
 
 ## Roadmap
 
