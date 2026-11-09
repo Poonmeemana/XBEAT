@@ -62,7 +62,7 @@ Simulator views of the prototype, from planning to run guidance.
 ### Demo Video
 
 https://github.com/user-attachments/assets/d31545ef-a923-4a5b-b2fe-b1cf5ad94c39
-(have sound)
+(has sound)
 
 ## Tech Stack
 
